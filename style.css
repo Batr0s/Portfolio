@@ -1,22 +1,45 @@
 :root {
-    --dark-background: #20252C;
-    --dark-color-hover: #3c4654;
-    --dark-text: #fafafa;
-    --dark-text-secondary: #eee;
+    --dark-background: #1A1A1A ;
+    --color-hover: rgba(76, 164, 251, 0.453) ;
+    --font-color-primary: #E0E0E0 ;
+    --font-color-secondary: rgb(209 213 219);
+    --highlight-primary-color: #1f87ff;
+    --highlight-secondary-color: #7bb7fb;
 }
 
 html {
     background-color: var(--dark-background);
     font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;;
     font-variation-settings: 'wght' 400;
+    font-size: 22px;
+}
+
+main {
+    width: 60%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
 }
 
 h1, h2 {
-    color: var(--dark-text);
+    color: var(--font-color-primary);
+}
+
+h1 {
+    font-size: 52px;
+}
+
+p {
+    color: var(--font-color-secondary);
 }
 
 a {
-    color: var(--dark-text);
+    color: var(--font-color-primary);
+    font-size: 16px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -25,10 +48,23 @@ ul {
     list-style: none;
 }
 
+b {
+    color: var(--highlight-secondary-color);
+}
+
+span {
+    color: var(--font-color-primary);
+    font-size: 16px;
+}
+
+i {
+    margin-right: 6px;
+}
+
 /* Header */
 
 header {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .nav-list {
@@ -41,9 +77,63 @@ header {
     padding: 9px 16px;
     margin: 5px;
     border-radius: 50px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    border: 1px solid var(--dark-background);
 }
 
 .nav-link:hover {
-    background-color: rgba(133, 194, 254, 0.15);
+    background-color: var(--color-hover);
+    border: 1px solid var(--highlight-secondary-color);
+}
+
+/* HOME */
+
+#home {
+    padding-top: 80px;
+}
+
+.intro-box {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 20px;
+}
+
+.intro-header {
+    h2 {
+        margin-top: -30px;
+        margin-bottom: 30px;
+        color: var(--highlight-primary-color);
+    }
+}
+
+.intro-img-box {
+    padding-top: 50px;
+}
+
+.img-yo {
+    width: 60%;
+    margin-left: 50px;
+    border-radius: 140px 140px 0 0;
+    border: 2px solid #000; 
+}
+
+.intro-contact {
+    display: flex;
+    margin: 30px 0;
+    padding: 0;
+    /* border: red solid 1px; */
+}
+
+.intro-contact a {
+    padding: 8px 15px;
+    padding-top: 6px;
+    margin: 5px;
+    border-radius: 50px;
+    background-color: var(--color-hover);
+    border: 1px solid var(--highlight-secondary-color);
+    transition: border 0.3s ease;
+}
+
+.intro-contact a:hover {
+    border: 1px solid var(--dark-background);
 }
