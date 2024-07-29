@@ -5,6 +5,8 @@
     --font-color-secondary: rgb(209 213 219);
     --highlight-primary-color: #1f87ff;
     --highlight-secondary-color: #7bb7fb;
+
+    --x-img-projects: 500px;
 }
 
 html {
@@ -12,6 +14,10 @@ html {
     font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;;
     font-variation-settings: 'wght' 400;
     font-size: 22px;
+}
+
+body {
+    margin: 0;
 }
 
 main {
@@ -25,7 +31,7 @@ main {
     }
 }
 
-h1, h2 {
+h1, h2, h3, h4, li {
     color: var(--font-color-primary);
 }
 
@@ -35,6 +41,7 @@ h1 {
 
 p {
     color: var(--font-color-secondary);
+    font-size: 18px;
 }
 
 a {
@@ -70,6 +77,7 @@ header {
 .nav-list {
     display: flex;
     justify-content: center;
+    padding: 0;
 }
 
 .nav-link {
@@ -86,9 +94,24 @@ header {
     border: 1px solid var(--highlight-secondary-color);
 }
 
+@media (max-width: 450px) {
+    header {
+        width: 100%;
+    }
+    .nav-list {
+        justify-content: space-evenly;
+    }
+    .nav-link {
+        font-size: 16px;
+        padding: 7px 7px;
+        margin: 0px;
+    }
+}
+
+
 /* HOME */
 
-#home {
+section {
     padding-top: 80px;
 }
 
@@ -111,7 +134,8 @@ header {
 }
 
 .img-yo {
-    width: 60%;
+    width: 100%;
+    max-width: 150px;
     margin-left: 50px;
     border-radius: 140px 140px 0 0;
     border: 2px solid #000; 
@@ -136,4 +160,49 @@ header {
 
 .intro-contact a:hover {
     border: 1px solid var(--dark-background);
+}
+
+
+/* PROJECTS */
+
+.projects-box article {
+    display: flex;
+}
+
+article > div {
+    flex: 1
+}
+
+.project-img {
+    width: 50%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    margin-right: 30px;
+
+    img {
+        width: var(--x-img-projects);
+
+    }
+}
+
+.project-info-title {
+    margin: 0;
+}
+
+.project-info-description-tech {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 4px 8px;
+        /* padding-top: 6px; */
+        margin: 5px;
+        border-radius: 50px;
+        background-color: var(--color-hover);
+        border: 1px solid var(--highlight-secondary-color);
+
+        font-size: 14px;
+    }
 }
