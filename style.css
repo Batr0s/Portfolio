@@ -5,7 +5,11 @@
     --font-color-secondary: rgb(209 213 219);
     --highlight-primary-color: #1f87ff;
     --highlight-secondary-color: #7bb7fb;
-
+    --link-background-color: #393951;
+    --link-border-color: #6b6b97;
+    --html-color: #ff874b;
+    --css-color: #4b54ff;
+    --js-color: #e3dd3f;
     --x-img-projects: 500px;
 }
 
@@ -41,7 +45,7 @@ h1 {
 
 p {
     color: var(--font-color-secondary);
-    font-size: 18px;
+    font-size: 16px;
 }
 
 a {
@@ -66,6 +70,18 @@ span {
 
 i {
     margin-right: 6px;
+}
+
+.img-link {
+    margin-right: 6px;
+}
+
+.highlight-primary-color {
+    color: var(--highlight-primary-color);
+}
+
+.highlight-secondary-color {
+    color: var(--highlight-secondary-color);
 }
 
 /* Header */
@@ -111,7 +127,7 @@ header {
 
 /* HOME */
 
-section {
+section, footer {
     padding-top: 80px;
 }
 
@@ -122,10 +138,12 @@ section {
 }
 
 .intro-header {
+    p {
+        font-size: 20px;
+    }
     h2 {
         margin-top: -30px;
         margin-bottom: 30px;
-        color: var(--highlight-primary-color);
     }
 }
 
@@ -169,6 +187,10 @@ section {
     display: flex;
 }
 
+.projects-box article:nth-child(n+2) {
+    margin-top: 3em;
+}
+
 article > div {
     flex: 1
 }
@@ -190,19 +212,87 @@ article > div {
     margin: 0;
 }
 
+.project-info-description {
+    margin-top: 10px;
+}
+
+.tech-html {
+    background-color: var(--html-color);
+}
+
+.tech-css {
+    background-color: var(--css-color);
+}
+
+.tech-js {
+    background-color: var(--js-color);
+} 
+
 .project-info-description-tech {
     display: flex;
     padding: 0;
     margin: 0;
 
     li {
-        padding: 4px 8px;
-        /* padding-top: 6px; */
+        display: flex;
         margin: 5px;
-        border-radius: 50px;
-        background-color: var(--color-hover);
+        padding: 4px 8px;
+        padding-top: 3px;
+        border-radius: 0.5rem;
         border: 1px solid var(--highlight-secondary-color);
 
-        font-size: 14px;
+        .sphere {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            margin: 5px 4px 0 0px;
+        }
+        p {
+            font-size: 13px;
+            margin: 0;
+        }
     }
+}
+
+.project-info-description-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+}
+
+.link-box {
+    display: flex;
+    /* width: 180px; */
+    border: 1px solid var(--link-border-color);
+    border-radius: 0.5rem;
+    margin-right: 15px;
+    padding: 0 5px;
+    background-color: var(--link-background-color);
+    transition: border-color 0.3s ease, border 0.3s ease;
+    width: fit-content;
+
+    a {
+        padding: 7px;
+    }
+}
+
+.link-box:hover {
+    border-color: var(--link-background-color);
+}
+
+.project-info-description-link {
+    display: flex;
+    margin-top: 25px;
+
+
+
+
+}
+
+/* SOBRE MI */
+
+
+.cv {
 }
