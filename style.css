@@ -376,7 +376,7 @@ article > div {
     }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 400px) {
     
     .project-img {
         width: 100%;
